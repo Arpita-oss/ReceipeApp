@@ -7,6 +7,7 @@ import Create from "../components/Create"
 import About from "../components/About"
 import Contact from "../components/Contact"
 import Layout from "../components/Layout";
+import Update from "../components/Update";
 
 
 const MainRouter = () => {
@@ -19,6 +20,7 @@ const MainRouter = () => {
         <Route path="/create-recipe" element={<Create/>} />
         <Route path="/recipes/1" element={<Details />} />
         <Route path="/about" element={<About />} />
+        <Route path="/update-recipe/1" element={<Update />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>

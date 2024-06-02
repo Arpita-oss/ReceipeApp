@@ -1,8 +1,10 @@
 import React from 'react'
 import Card from './Card';
+import { useLocation } from 'react-router-dom';
 
 
 const Recipe = () => {
+  const {pathname} = useLocation()
   const recipe = {
     id:"ffbdsjf",
     title:"Simple Omelette Recipe ",
@@ -26,13 +28,16 @@ const Recipe = () => {
         
       
       </div>
-      <a
-                    href="/create-recipe"
-                    className="cursor-pointer text-black rounded-md absolute top-[15%] py-2 px-5 left-[10%]  bg-green-200 gap-x-3 flex items-center"
-                >
-                    <i className="text-3xl text-green-600 ri-add-box-line"></i>
-                    Create Recipe
-                </a>
+      {pathname=="/recipes" && (
+         <a
+         href="/create-recipe"
+         className="cursor-pointer text-black rounded-md absolute top-[15%] py-2 px-5 left-[10%]  bg-green-200 gap-x-3 flex items-center"
+     >
+         <i className="text-3xl text-green-600 ri-add-box-line"></i>
+         Create Recipe
+     </a>
+
+      )}
           </div>
   )
 }
